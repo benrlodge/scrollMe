@@ -1,0 +1,170 @@
+<html>
+<head>
+
+<title>scrollMe.js</title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+
+
+</head>
+<body>
+
+<nav id='mynav'>
+
+	<h1>scrollMe.js</h1> 
+	<h2> A jQuery Snippet</h2>
+
+	<h3>Get the code <a href="https://github.com/benrlodge/scrollMe">on Github</a></h3>
+
+</nav>
+
+
+
+<div class='demo1'>
+	<a class="scrollme" data-scroll-speed="1200" data-scroll-y="1450" href="#">Go ahead, try me, give me a click </a>
+</div>
+
+
+
+<section id="mycontent">
+
+	<article id="about">
+	<h2> About scrollMe.js</h2>
+		
+		<p>
+			scrollMe.js is a small jquery snippet that allows you to easily set internal smooth-scroll links. To keep this super simple to add and update, all options are declared within the anchor tag, no need to mess with any other javascript other than loading up the script.</p><Br>
+
+	
+		</p>
+	</article>
+
+
+	<article>
+	<h2> How to Use </h2>
+		
+
+
+
+		<ol>
+			<li> Create an anchor tag </li>
+		<p class='code'>
+			&lt;a href="#">Go ahead, try me, give me a click &lt;/a&gt;
+		</p>
+
+			<li> Add the "scrollme" class </li>
+				<p class='code'>
+					&lt;a class="scrollme" href="#">Go ahead, try me, give me a click &lt;/a&gt;
+				</p>
+
+			<li> Set the speed to scroll to your destination in milliseconds with the "data-speed" attribute </li>
+				<p class='code'>
+					&lt;a class="scrollme" data-scroll-speed="900" href="#"> Go ahead, try me, give me a click &lt;/a&gt;
+				</p>
+
+
+			<li> Choose the scroll method and distance: </li>
+			
+		</ol>
+
+		
+		
+		<p class='divide'>There are 4 types of scroll methods you can choose from</p>
+		<ol class='nopad'>
+		<li> Scroll x number of pixels from the top of the page (absolute) </li>
+		<li> Scroll x number of pixels from the link being clicked (relative) </li>
+		<li> Scroll directly to a class or id tag (specific) </li>
+		<li> Scroll to a class or id with an additional distance involved (abSpecific) </li>
+		</ol>
+		<br>	
+		<p> Each link contains a "data-scroll-type" attribute which determines the method of scrolling used, and (all but one scroll-type) a "data-scroll-y" attribute which sets the distance travelled vertically on the page.</p> 
+
+		<h5> data-type="absolute"</h5>
+		<p> To scroll a distance from the top of the page, set the "data-type" attribute to "absolute". Give the "data-scroll-y" attribute a value of pixels to travel from the top of the page. </p>
+				<p class='code'>
+					&lt;a class="scrollme" data-scroll-speed="900" data-scroll-type="absolute" data-scroll-y="1400" href="#"> Go ahead, try me, give me a click &lt;/a&gt;
+				</p>
+
+
+		<h5> data-type="relative"</h5>
+		<p> To scroll a distance relative to the link being clicked, set the "data-type" attribute to "relative". Give the "data-scroll-y" attribute a value of pixels you want to travel from the link being clicked. Note: you can use positive or negative values.</p>
+				<p class='code'>
+					&lt;a class="scrollme" data-scroll-speed="900" data-scroll-type="relative" data-scroll-y="400" href="#"> Go ahead, try me, give me a click &lt;/a&gt;
+				</p>
+
+
+		<h5> data-type="specific"</h5>
+		<p> To scroll directly to a class or id, set the "data-type" attribute to "specific". Additionally, set the "data-gotothis" attribute to the class or ID you wish to scroll to. You do not need a "data-scroll-y" attribute for this method. <br>Note: if you have several classes on one page, the link will go to the first class it comes across. In the interest of safety, you may want to use IDs only, or and ID in addition to any class based tags you wish to scroll to. </p>
+				<p class='code'>
+					&lt;a class="scrollme" data-scroll-speed="900" data-scroll-type="specific" data-gotothis="#mytag" href="#"> Go ahead, try me, give me a click &lt;/a&gt;
+				</p>
+
+
+		<h5> data-type="abSpecific"</h5>
+		<p> The "abSpecific" option is a hybrid between absolute scrolling and specific scrolling. Say you have a class or ID you wish to scroll to, but you want the user to land 100 pixels before the beginning of that section, or 100 pixels after. By setting the "data-type" to "abSpecific" you get this control. Set the "data-gotothis" just as you would for the "specific" option, then set the "data-scroll-y" to the additional distance you want traveled. Note: you can use positive or negative values.</p>
+
+
+
+		<h4>2. Load up the scripts</h4>
+		<p class='code'> 
+		
+		&lt;script src="jquery.js"&gt; &lt;/script&gt;
+		<br>
+		&lt;script src="fixedScrollNav.js"&gt; &lt;/script&gt;
+
+		</p>
+
+		
+	</article>
+
+
+
+	<article>
+	<h2> Examples </h2>
+
+		
+			<p> <a class='scrollMe' data-scroll-speed="2500" data-scroll-y="1700" href="#"> data-scroll-speed="2500" data-scroll-xPixels="1700" </a> </p>
+			<p> <a class='scrollMe' data-scroll-speed="200" data-scroll-y="2300" href="#"> data-speed="200" data-scroll-xPixels="2300" </a> </p>
+
+
+	<h4>Try it yourself:</h4>
+		
+		<br>
+		<p>Set Type: <select> <option> Relative </option> </select> </p>
+		<p>Set Speed: <input type="number" value="900"> </p>
+		<p>Set Scroll-y: <input type="number" value="200"> </p>
+		<p><a href="#"> Click me </a></p>
+
+	</article>
+
+
+	<article>
+	<h2> Additional Options </h2>
+	<p> Relative scroll option: </p>
+	<p> The default scrollme "goto" data attribute will take you x number of pixels (that you declare in data-scroll-xPixels) from the top of the page. If you would like to set the destination x number of pixels relative to the link being clicked, use the "data-rel-goto" option. </p>
+	<p>For example:</p>
+
+		<p class='code'>
+			
+			&lt;a class="scrollme" data-speed="2000" data-rel-goto="200" href="#">Go ahead, try me, give me a click &lt;/a&gt;
+
+		</p>
+	<a class="scrollme" data-speed="2000" data-rel-goto="200" href="#">Go ahead, try me, give me a click </a>
+
+	</article>
+
+
+
+</section>
+
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/scrollMe.js"></script>
+
+
+
+</body>
+</html>
