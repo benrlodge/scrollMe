@@ -8,7 +8,7 @@ $.fn.extend
   
     settings =
       selector	: this
-      scrollto	: '' # For type=specific
+      scrollto	: '' 
       type			: ''
       speed			: 900
 
@@ -29,21 +29,19 @@ $.fn.extend
 	    	return selector.click ->
 	    		absolute() if type is 'absolute' 
 	    		specific() if type is 'specific'
-	    		relative() if type is 'relative' 
-
+	    		return false
 
 	    absolute = ->
-	    	$('html, body').animate 'scrollTop' : scrollto+ 'px', 900
-	    	return false
-
-
-
+	    	$('html, body').animate 'scrollTop' : scrollto+ 'px', speed
 
 
 	    specific = ->
-	    	log 'specificing'
+	    	log 'specific'
+	    	location = $(scrollto).offset().top
+	    	log 'location: ' + location
+	    	$('html, body').animate 'scrollTop' : location+ 'px', speed
+	    	
 
-	    relative = ->
-	    	log 'relativing'
+
 
 	    init()

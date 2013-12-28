@@ -54,7 +54,7 @@ header {
         text-shadow: 0px 14px 1px rgba(0, 0, 0, 0.4); }
 
 div[role=main] {
-  max-width: 600px;
+  max-width: 650px;
   margin: 100em auto 0 auto;
   background: white;
   padding: 1em 2em;
@@ -63,10 +63,12 @@ div[role=main] {
     margin-bottom: 3em;
     padding-top: 0.25em;
     padding-bottom: 4em; }
-    div[role=main] section:last-child {
-      border-bottom: none; }
+    div[role=main] section article {
+      margin-bottom: 7em; }
     div[role=main] section ol.nopad li {
       margin-top: 0; }
+    div[role=main] section ol.leftpad li {
+      margin-left: 3em; }
     div[role=main] section ol li {
       padding: 0.2em 0;
       margin-top: 2em; }
@@ -105,6 +107,8 @@ div[role=main] {
       padding: 0.5em 0;
       margin: 1.5em 0 1.5em 1.3em;
       display: inline-block; }
+    div[role=main] section .types {
+      margin-left: 5em; }
   div[role=main] .code {
     margin: 1em 0;
     padding: 1em 1.5em;
@@ -115,12 +119,15 @@ div[role=main] {
     overflow: auto;
     border: 2px solid #dddddd;
     font-family: "Courier New", Courier, monospace; }
-    div[role=main] .code > span {
-      padding-left: 1.5em; }
-      div[role=main] .code > span.two {
-        padding-left: 3em; }
-      div[role=main] .code > span.three {
-        padding-left: 6em; }
-      div[role=main] .code > span.divide {
-        padding-left: 0;
-        padding-right: 4em; }
+    div[role=main] .code > span.param {
+      padding-left: 3em;
+      display: block; }
+    div[role=main] .code > span.tag {
+      color: #007fc9; }
+    div[role=main] .code > span.two {
+      padding-left: 3em; }
+    div[role=main] .code > span.three {
+      padding-left: 6em; }
+    div[role=main] .code > span.divide {
+      padding-left: 0;
+      padding-right: 4em; }

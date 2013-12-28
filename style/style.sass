@@ -85,7 +85,7 @@ header
 
 
 div[role=main]
-	max-width: 600px
+	max-width: 650px
 	margin: 100em auto 0 auto
 	background: #fff
 	padding: 1em 2em
@@ -97,14 +97,19 @@ div[role=main]
 		padding-top: .25em
 		padding-bottom: 4em
 
-		
-		&:last-child
-			border-bottom: none
+
+	
+		article
+			margin-bottom: 7em
 
 		ol
 			&.nopad
 				li
 					margin-top: 0
+			&.leftpad
+				li
+					margin-left: 3em
+
 			li
 				
 				padding: .2em 0
@@ -156,7 +161,8 @@ div[role=main]
 			display: inline-block
 
 
-
+		.types
+			margin-left: 5em
 
 	.code
 		margin: 1em 0
@@ -171,7 +177,14 @@ div[role=main]
 		font-family: "Courier New", Courier, monospace	
 
 		> span
-			padding-left: 1.5em
+			
+
+			&.param
+				padding-left: 3em
+				display: block
+			
+			&.tag
+				color: #007fc9
 
 			&.two
 				padding-left: 3em

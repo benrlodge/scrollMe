@@ -17,7 +17,7 @@
         return console.log(msg);
       };
       return this.each(function() {
-        var absolute, init, relative, scrollto, selector, specific, speed, type;
+        var absolute, init, scrollto, selector, specific, speed, type;
         selector = settings.selector;
         scrollto = settings.scrollto;
         speed = settings.speed;
@@ -30,22 +30,22 @@
             if (type === 'specific') {
               specific();
             }
-            if (type === 'relative') {
-              return relative();
-            }
+            return false;
           });
         };
         absolute = function() {
-          $('html, body').animate({
+          return $('html, body').animate({
             'scrollTop': scrollto + 'px'
-          }, 900);
-          return false;
+          }, speed);
         };
         specific = function() {
-          return log('specificing');
-        };
-        relative = function() {
-          return log('relativing');
+          var location;
+          log('specific');
+          location = $(scrollto).offset().top;
+          log('location: ' + location);
+          return $('html, body').animate({
+            'scrollTop': location + 'px'
+          }, speed);
         };
         return init();
       });

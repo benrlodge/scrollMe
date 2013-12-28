@@ -33,7 +33,7 @@
 	<h2> About scrollMe.js</h2>
 		
 		<p>
-			scrollMe.js is a small jquery plugin that allows you to easily set internal smooth-scroll links. scrollMe.js was developed by <a href="http://www.benrlodge.com">Ben Lodge</a>.
+			scrollMe.js is a small jquery plugin that allows you to easily set smooth-scroll internal links. scrollMe.js was developed by <a href="http://www.benrlodge.com">Ben Lodge</a>.
 
 	
 		</p>
@@ -52,58 +52,46 @@
 			&lt;a href="#"> Go ahead, try me, give me a click &lt;/a&gt;
 		</p>
 
-			<li> Add the "scrollme" class </li>
+			<li> Add an id to represent the link </li>
 				<p class='code'>
-					&lt;a class="scrollme" href="#">Go ahead, try me, give me a click &lt;/a&gt;
+					&lt;a id="mylink" href="#">Go ahead, give me a click &lt;/a&gt;
 				</p>
 
-			<li> Set the speed to scroll to your destination in milliseconds with the "data-speed" attribute </li>
-				<p class='code'>
-					&lt;a class="scrollme" data-scroll-speed="900" href="#"> Go ahead, try me, give me a click &lt;/a&gt;
-				</p>
+				</li>
 
-
-			<li> Choose the scroll method and distance: </li>
+			<li> Set the scroll method and distance. There are 2 types of scroll methods you can choose from: </li>
 			
 		</ol>
 
 		
 		
-		<p class='divide'>There are 3 types of scroll methods you can choose from</p>
-		<ol class='nopad'>
+		<ol class='nopad leftpad'>
 		<li> Scroll x number of pixels from the top of the page (absolute) </li>
-		<li> Scroll x number of pixels from the link being clicked (relative) </li>
+		<!-- <li> Scroll x number of pixels from the link being clicked (relative) </li> -->
 		<li> Scroll directly to a class or id tag (specific) </li>
 		<!-- <li> Scroll to a class or id with an additional distance involved (abSpecific) </li> -->
 		</ol>
 		<br>	
-		<p> Each link contains a "data-scroll-type" attribute which determines the method of scrolling used, and  a "data-scroll-y" attribute which sets the distance travelled vertically on the page (except the specific method).</p> 
-
-		<h5> data-type="absolute"</h5>
-		<p> To scroll a distance from the top of the page, set the "data-type" attribute to "absolute". Give the "data-scroll-y" attribute a value of pixels to travel from the top of the page. </p>
-				<p class='code'>
-					&lt;a class="scrollme" data-scroll-speed="900" data-scroll-type="absolute" data-scroll-y="1400" href="#"> Go ahead, try me. &lt;/a&gt;
-				</p>
-<a id='demoabs' class="scrollme showme" data-show="#main" href="#"> Absolute Demo </a>
+		
+		<div class='types'>
 
 
-		<h5> data-type="relative"</h5>
-		<p> To scroll a distance relative to the link being clicked, set the "data-type" attribute to "relative". Give the "data-scroll-y" attribute a value of pixels you want to travel from the link being clicked. Note: you can use positive or negative values.</p>
-				<p class='code'>
-					&lt;a class="scrollme" data-scroll-speed="900" data-scroll-type="relative" data-scroll-y="400" href="#"> Go ahead, try me. &lt;/a&gt;
-				</p>
+			
+			<p class='code'>
+								
+
+				$("#introdemo").scrollMe({ <br>
+					<span class='param'>type: "absolute", //absolute or specific </span>
+					<span class='param'>speed: 1900, //speed in milliseconds</span>
+					<span class='param'>scrollto: 1297 //pixels to travel... </span>
+					<span class='param'>scrollto: '#gohere' //or id to travel to </span>
+				}) <br>
+
+			</p>
 
 
-		<h5> data-type="specific"</h5>
-		<p> To scroll directly to a class or id, set the "data-type" attribute to "specific". Additionally, set the "data-gotothis" attribute to the class or ID you wish to scroll to. You do not need a "data-scroll-y" attribute for this method. <br>Note: if you have several classes on one page, the link will go to the first class it comes across. In the interest of safety, you may want to use IDs only, or and ID in addition to any class based tags you wish to scroll to. </p>
-				<p class='code'>
-					&lt;a class="scrollme" data-scroll-speed="900" data-scroll-type="specific" data-gotothis="#mytag" href="#"> Go ahead, try me. &lt;/a&gt;
-				</p>
 
-
-	<!-- 	<h5> data-type="abSpecific"</h5>
-		<p> The "abSpecific" option is a hybrid between absolute scrolling and specific scrolling. Say you have a class or ID you wish to scroll to, but you want the user to land 100 pixels before the beginning of that section, or 100 pixels after. By setting the "data-type" to "abSpecific" you get this control. Set the "data-gotothis" just as you would for the "specific" option, then set the "data-scroll-y" to the additional distance you want traveled. Note: you can use positive or negative values.</p>
- -->
+		</div> <!-- //types -->
 
 
 		<h4>Last, load up the scripts</h4>
@@ -119,20 +107,38 @@
 	</section>
 
 
-<!-- 
-	<section>
-		<h2> Try it yourself </h2>
 
 
- 	<h4>Try it yourself:</h4>
-		
-		<br>
-		<p>Set Type: <select> <option> Relative </option> </select> </p>
-		<p>Set Speed: <input type="number" value="900"> </p>
-		<p>Set Scroll-y: <input type="number" value="200"> </p>
-		<p><a href="#"> Click me </a></p>
- 
-	</section> -->
+
+	<section id='demo'>
+	<h2> Demos </h2>
+	
+
+		<article>
+		<p> <a id="specific-demo" href="#">I am a specific link. I travel up to the about section.</a> </p>
+
+			<p class='code'>								
+				$("#specific-demo").scrollMe({ <br>
+					<span class='param'>type: "specific", </span>
+					<span class='param'>scrollto: "#about" </span>
+				}) <br>
+			</p>
+		</article>
+
+
+		<article>
+		<p> <a id="absolute-demo" href="#">I am an absolute link. I travel 800px from the top of the page.</a> </p>
+
+			<p class='code'>								
+				$("#absolute-demo").scrollMe({ <br>
+					<span class='param'>type: "absolute", </span>
+					<span class='param'>scrollto: 800 </span>
+				}) <br>
+			</p>
+		</article>
+
+
+	</section>
 
 
 </div> <!-- //main -->
@@ -147,17 +153,23 @@
 <script>
 
 	$('#introdemo').scrollMe({
-		speed: 1600,
+		speed: 1200,
 		type: 'absolute',
 		scrollto: 1297
 	})
 
-
-	$('#demoabs').scrollMe({
-		speed: 1600,
+	$('#absolute-demo').scrollMe({
+		speed: 1000,
 		type: 'absolute',
-		scrollto: 1297
+		scrollto: 800
 	})
+
+
+	$('#specific-demo').scrollMe({
+		type: 'specific',
+		scrollto: '#about'
+	})
+
 
 </script>
 
