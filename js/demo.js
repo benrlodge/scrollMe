@@ -11,7 +11,7 @@
         "scrollTop": 0
       }, 0);
     };
-    return setTimeout(done, 2000);
+    return setTimeout(done, 1400);
   });
 
 }).call(this);
