@@ -11,26 +11,27 @@
 </head>
 <body>
 
-<nav id='mynav'>
 
-	<h1>scrollMe.js</h1> 
-	<h2> A jQuery Snippet</h2>
+<header>
+	
+	<h1>
+		<a class="scrollme" data-scroll-speed="1600" data-scroll-y="1450" href="#">
+		scrollMe.js
+		</a>
+	</h1>
 
-	<h3>Get the code <a href="https://github.com/benrlodge/scrollMe">on Github</a></h3>
-
-</nav>
-
-
-
-<div class='demo1'>
-	<a class="scrollme" data-scroll-speed="1200" data-scroll-y="1450" href="#">Go ahead, try me, give me a click </a>
-</div>
+</header>
 
 
+<div role="main">
 
-<section id="mycontent">
+<!-- 
+	<div class='demo1'>
+		<a class="scrollme" data-scroll-speed="1200" data-scroll-y="1450" href="#">Go ahead, try me, give me a click </a>
+	</div>
 
-	<article id="about">
+ -->
+	<section id="about">
 	<h2> About scrollMe.js</h2>
 		
 		<p>
@@ -38,10 +39,10 @@
 
 	
 		</p>
-	</article>
+	</section>
 
 
-	<article>
+	<section>
 	<h2> How to Use </h2>
 		
 
@@ -116,11 +117,11 @@
 		</p>
 
 		
-	</article>
+	</section>
 
 
 
-	<article>
+	<section>
 	<h2> Examples </h2>
 
 		
@@ -136,27 +137,10 @@
 		<p>Set Scroll-y: <input type="number" value="200"> </p>
 		<p><a href="#"> Click me </a></p>
 
-	</article>
+	</section>
 
 
-	<article>
-	<h2> Additional Options </h2>
-	<p> Relative scroll option: </p>
-	<p> The default scrollme "goto" data attribute will take you x number of pixels (that you declare in data-scroll-xPixels) from the top of the page. If you would like to set the destination x number of pixels relative to the link being clicked, use the "data-rel-goto" option. </p>
-	<p>For example:</p>
-
-		<p class='code'>
-			
-			&lt;a class="scrollme" data-speed="2000" data-rel-goto="200" href="#">Go ahead, try me, give me a click &lt;/a&gt;
-
-		</p>
-	<a class="scrollme" data-speed="2000" data-rel-goto="200" href="#">Go ahead, try me, give me a click </a>
-
-	</article>
-
-
-
-</section>
+</div> <!-- //main -->
 
 
 
